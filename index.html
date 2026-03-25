@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ জন্মদিন Tw ❤️</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;800&family=Tiro+Bangla:ital@0;1&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #fb6f92;
+            --secondary: #ff8fa3;
+            --bg-light: #fff0f3;
+        }
+
+        body {
+            font-family: 'Anek Bangla', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+            overflow-x: hidden;
+            /* Prevent text selection to improve anti-inspect feel */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .font-tiro { font-family: 'Tiro Bangla', serif; }
+        .font-cursive { font-family: 'Pacifico', cursive; }
+
+        /* Custom Love Cursor - Applies Everywhere */
+        * {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'%3E%3Cpath fill='%23fb7185' stroke='%23ffffff' stroke-width='1.5' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 14 14, auto !important;
+        }
+        a, button, .nav-link, .mobile-nav-link, img, .clickable {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%23e11d48' stroke='%23ffffff' stroke-width='1.5' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 14 14, pointer !important;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #ffe5ec; }
+        ::-webkit-scrollbar-thumb { background: #ffb3c6; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #fb6f92; }
+
+        /* Floating Hearts Animation */
+        .heart-bg {
+            position: fixed;
+            font-size: 1.2rem;
+            color: rgba(251, 111, 146, 0.3);
+            animation: floatUp 5s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-20vh) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Timeline Styles */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #ffb3c6;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 5px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline-container::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item-right { left: 0%; }
+            .timeline-item-left { left: 0%; }
+            .timeline-dot { left: 22px !important; }
+        }
+
+        /* Polaroid Effect */
+        .polaroid {
+            background: white;
+            padding: 10px 10px 25px 10px;
+            box-shadow: 0 10px 25px rgba(225, 29, 72, 0.15);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .polaroid:hover { transform: scale(1.08) rotate(0deg) !important; z-index: 10; }
+
+        /* Active Menu Styles */
+        .nav-link.active, .mobile-nav-link.active {
+            color: #e11d48; /* rose-600 */
+            font-weight: 800;
+        }
+        
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #e11d48, #fb7185);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Beautiful Poem Card Style */
+        .poem-card {
+            background: linear-gradient(145deg, #ffffff, #fff0f3);
+            box-shadow: 20px 20px 60px #fce7ec, -20px -20px 60px #ffffff;
+            border-left: 6px solid #fb7185;
+            position: relative;
+            overflow: hidden;
+        }
+        .poem-card::before {
+            content: "\f10d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            color: rgba(251, 113, 133, 0.05);
+            transform: rotate(15deg);
+        }
+
+        /* Stylish Text Effect */
+        .stylish-text {
+            font-family: 'Tiro Bangla', serif;
+            background: linear-gradient(45deg, #e11d48, #fb7185, #f43f5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 4px 4px rgba(225, 29, 72, 0.3));
+            line-height: 1.8;
+            padding-bottom: 0.4em;
+            padding-top: 0.4em;
+            overflow: visible;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Background Music Element (Hidden & Autoplay handled via JS) -->
+    <audio id="bg-music" loop>
+        <source src="assets/hamim.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Background Hearts Container -->
+    <div id="hearts-container" class="fixed inset-0 pointer-events-none"></div>
+
+    <!-- ================= Responsive Navigation ================= -->
+    <nav class="fixed w-full z-50 glass shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-3xl font-cursive text-rose-500 font-bold hover:scale-110 transition-transform">Tw ❤️</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 font-semibold text-gray-600">
+                    <a href="#home" class="nav-link hover:text-rose-500 transition">শুরু</a>
+                    <a href="#timeline" class="nav-link hover:text-rose-500 transition">স্মৃতি</a>
+                    <a href="#story" class="nav-link hover:text-rose-500 transition">গল্প</a>
+                    <a href="#poems" class="nav-link hover:text-rose-500 transition">কবিতা</a>
+                    <a href="#random" class="nav-link hover:text-rose-500 transition">কিছু কথা</a>
+                    <a href="#gallery" class="nav-link hover:text-rose-500 transition">গ্যালারি</a>
+                </div>
+
+                <!-- Mobile Hamburger Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-rose-500 text-2xl focus:outline-none hover:text-rose-600 transition-colors px-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-pink-100 absolute w-full shadow-lg transition-all duration-300">
+            <div class="flex flex-col px-4 pt-2 pb-4 space-y-2 font-semibold text-center text-gray-600 text-lg">
+                <a href="#home" class="mobile-nav-link hover:text-rose-500 py-2 active">শুরু</a>
+                <a href="#timeline" class="mobile-nav-link hover:text-rose-500 py-2">স্মৃতি</a>
+                <a href="#story" class="mobile-nav-link hover:text-rose-500 py-2">গল্প</a>
+                <a href="#poems" class="mobile-nav-link hover:text-rose-500 py-2">কবিতা</a>
+                <a href="#random" class="mobile-nav-link hover:text-rose-500 py-2">কিছু কথা</a>
+                <a href="#gallery" class="mobile-nav-link hover:text-rose-500 py-2">গ্যালারি</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= Hero / Home Section ================= -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-10 pb-10 px-4 relative section-spy">
+        <div class="absolute inset-0 z-[-1] opacity-20 bg-[url('https://images.unsplash.com/photo-1518199266791-5375a83164ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+        
+        <div data-aos="zoom-in" data-aos-duration="1500" class="text-center glass p-8 md:p-16 rounded-[3rem] max-w-3xl w-full border-2 border-white shadow-[0_10px_40px_rgba(251,113,133,0.2)] relative overflow-hidden mt-10">
+            
+            <p class="text-xl md:text-2xl text-rose-500 font-semibold mb-3 tracking-wider" data-aos="fade-down" data-aos-delay="200">আমার পৃথিবীর আলো,</p>
+            <h1 class="text-6xl md:text-8xl font-bold text-rose-600 mb-2 font-cursive drop-shadow-md" data-aos="zoom-in" data-aos-delay="400" id="gf-name-display">Tw</h1>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-4 mb-6" data-aos="fade-up" data-aos-delay="600">শুভ জন্মদিন! 🎂</h2>
+            <p class="text-lg md:text-xl text-gray-600 font-tiro italic mb-8" data-aos="fade-up" data-aos-delay="800">
+                "তুমি শুধু আমার ভালোবাসা নও, তুমি আমার বেঁচে থাকার কারণ।"
+            </p>
+
+            <!-- Countdown Container -->
+            <div id="countdown-container" class="mt-4 transition-all duration-500" data-aos="fade-up" data-aos-delay="1000">
+                <p class="text-gray-600 font-bold mb-4 text-sm tracking-widest uppercase bg-pink-100/80 backdrop-blur-sm inline-block px-5 py-2 rounded-full border border-pink-200">জন্মদিনের বাকি</p>
+                <div class="flex justify-center gap-2 md:gap-6 mt-2">
+                    <div class="bg-gradient-to-br from-rose-400 to-pink-500 text-white flex flex-col items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-[0_8px_20px_rgba(225,29,72,0.3)] transform hover:-translate-y-2 transition-transform duration-300">
+                        <span id="days" class="text-2xl md:text-3xl font-bold">00</span>
+                        <span class="text-[10px] md:text-xs font-medium">দিন</span>
+                    </div>
+                    <div class="bg-gradient-to-br from-rose-400 to-pink-500 text-white flex flex-col items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-[0_8px_20px_rgba(225,29,72,0.3)] transform hover:-translate-y-2 transition-transform duration-300">
+                        <span id="hours" class="text-2xl md:text-3xl font-bold">00</span>
+                        <span class="text-[10px] md:text-xs font-medium">ঘণ্টা</span>
+                    </div>
+                    <div class="bg-gradient-to-br from-rose-400 to-pink-500 text-white flex flex-col items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-[0_8px_20px_rgba(225,29,72,0.3)] transform hover:-translate-y-2 transition-transform duration-300">
+                        <span id="minutes" class="text-2xl md:text-3xl font-bold">00</span>
+                        <span class="text-[10px] md:text-xs font-medium">মিনিট</span>
+                    </div>
+                    <div class="bg-gradient-to-br from-rose-400 to-pink-500 text-white flex flex-col items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-[0_8px_20px_rgba(225,29,72,0.3)] transform hover:-translate-y-2 transition-transform duration-300">
+                        <span id="seconds" class="text-2xl md:text-3xl font-bold">00</span>
+                        <span class="text-[10px] md:text-xs font-medium">সেকেন্ড</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Message -->
+            <div id="special-message-container" class="hidden mt-6 bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-3xl border-2 border-rose-200 transform scale-95 transition-all duration-500 shadow-xl">
+                <i class="fa-solid fa-cake-candles text-5xl text-rose-500 mb-4 animate-bounce drop-shadow-md"></i>
+                <h3 class="text-2xl md:text-3xl font-bold text-rose-600 mb-2 font-cursive">সময় হয়ে গেছে! 🎉</h3>
+                <p class="text-gray-700 font-tiro text-lg leading-relaxed">হ্যাপি বার্থডে আমার ভালোবাসা! আজকের দিনটা তোমার জীবনের সবচেয়ে সুন্দর দিন হোক। তোমার জন্য আমার অফুরন্ত ভালোবাসা। ❤️</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Timeline Section ================= -->
+    <section id="timeline" class="py-24 px-4 section-spy bg-gradient-to-b from-transparent to-white/30">
+        <div class="max-w-5xl mx-auto">
+            <h2 data-aos="fade-down" class="text-4xl font-bold text-center text-rose-600 mb-20">আমাদের ভালোবাসার পথচলা 👣</h2>
+            
+            <div class="relative timeline-container max-w-4xl mx-auto">
+                
+                <!-- Left Item -->
+                <div data-aos="fade-right" class="relative w-full md:w-1/2 md:pr-12 md:left-0 mb-12 timeline-item timeline-item-left">
+                    <div class="absolute w-7 h-7 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full border-4 border-[#fff0f3] z-10 timeline-dot md:-right-3.5 md:left-auto top-5 shadow-[0_0_0_4px_#ffb3c6]"></div>
+                    <div class="glass p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-rose-400 group">
+                        <span class="text-rose-600 font-bold text-sm bg-rose-100 px-4 py-1.5 rounded-full inline-block mb-3 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i class="fa-regular fa-calendar-days mr-1"></i> শুরুটা যেখানে</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mt-2 mb-3">প্রথম দেখা 👀</h3>
+                        <p class="text-gray-600 leading-relaxed font-tiro text-lg">সেই প্রথম দিন, যখন আমাদের চোখাচোখি হয়েছিল। নার্ভাস ছিলাম, কিন্তু বুক ভরে গিয়েছিল এক অজানা আনন্দে।</p>
+                    </div>
+                </div>
+
+                <!-- Right Item -->
+                <div data-aos="fade-left" class="relative w-full md:w-1/2 md:pl-12 md:left-[50%] mb-12 timeline-item timeline-item-right">
+                    <div class="absolute w-7 h-7 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full border-4 border-[#fff0f3] z-10 timeline-dot md:-left-3.5 top-5 shadow-[0_0_0_4px_#ffb3c6]"></div>
+                    <div class="glass p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-rose-400 group">
+                        <span class="text-rose-600 font-bold text-sm bg-rose-100 px-4 py-1.5 rounded-full inline-block mb-3 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i class="fa-regular fa-comments mr-1"></i> কথার শুরু</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mt-2 mb-3">রাত জাগা গল্প 🌙</h3>
+                        <p class="text-gray-600 leading-relaxed font-tiro text-lg">সারারাত ধরে মেসেজ আর কথা বলা। ঘুমের চেয়ে তখন তোমার কণ্ঠ শোনা বেশি জরুরি ছিল!</p>
+                    </div>
+                </div>
+
+                <!-- Left Item -->
+                <div data-aos="fade-right" class="relative w-full md:w-1/2 md:pr-12 md:left-0 mb-12 timeline-item timeline-item-left">
+                    <div class="absolute w-7 h-7 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full border-4 border-[#fff0f3] z-10 timeline-dot md:-right-3.5 md:left-auto top-5 shadow-[0_0_0_4px_#ffb3c6]"></div>
+                    <div class="glass p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-rose-400 group">
+                        <span class="text-rose-600 font-bold text-sm bg-rose-100 px-4 py-1.5 rounded-full inline-block mb-3 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i class="fa-solid fa-ring mr-1"></i> অনুভূতি</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mt-2 mb-3">ভালোবাসার প্রকাশ 🌹</h3>
+                        <p class="text-gray-600 leading-relaxed font-tiro text-lg">ভয় ভয় বুকে তোমাকে বলা, "আমি তোমাকে ভালোবাসি"। আর তোমার সেই মিষ্টি হাসি দেওয়া সম্মতি।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Our Story Section ================= -->
+    <section id="story" class="py-24 px-4 bg-white/50 section-spy relative">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 data-aos="fade-down" class="text-4xl font-bold text-rose-600 mb-4 inline-block relative">
+                আমাদের ছোট্ট গল্প 📖
+                <div class="absolute w-full h-1.5 bg-rose-300 bottom-0 left-0 transform scale-x-50 rounded-full"></div>
+            </h2>
+            <div data-aos="zoom-in-up" class="mt-12 bg-white p-8 md:p-14 rounded-[2rem] shadow-[0_15px_40px_rgba(251,113,133,0.1)] border border-pink-100 text-left relative overflow-hidden group">
+                <i class="fa-solid fa-quote-left absolute top-8 text-6xl text-rose-50 left-8 z-0 transition-transform duration-500 group-hover:scale-125"></i>
+                <div class="relative z-10 font-tiro text-lg md:text-xl text-gray-700 leading-[2.2] space-y-6">
+                    <p data-aos="fade-up" data-aos-delay="100">
+                        জানিনা কিভাবে শুরু করবো। সেদিন প্রথম যখন তোমাকে দেখেছিলাম, মনে হয়েছিল সময় যেন থমকে দাঁড়িয়েছে। তোমার ঐ মায়াবী হাসি আর চোখের দৃষ্টিতে আমি সেদিনই আমার পৃথিবী খুঁজে পেয়েছিলাম।
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        এরপর একটু একটু করে কথা বলা, খুনসুটি, আর মান-অভিমানের মধ্যে দিয়ে কখন যে তুমি আমার জীবনের অবিচ্ছেদ্য অংশ হয়ে গেলে, তা আমি নিজেও বুঝতে পারিনি। আজ তোমার এই বিশেষ দিনে শুধু এটাই বলতে চাই— আমি তোমাকে আমার জীবনের শেষ নিঃশ্বাস পর্যন্ত এভাবেই ভালোবাসতে চাই।
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="300" class="text-right text-rose-500 font-bold mt-8 text-2xl font-cursive">
+                        - তোমার পাগল প্রেমিক রাতুল❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Poems Section ================= -->
+    <section id="poems" class="py-24 px-4 bg-gradient-to-b from-white/30 to-rose-50/50 section-spy relative">
+        <div class="max-w-6xl mx-auto">
+            <!-- Title Centered Fix -->
+            <div class="text-center mb-16" data-aos="zoom-in">
+                <h2 class="text-4xl font-bold text-rose-600 relative inline-block">
+                    কিছু কথা, কিছু কবিতা ✍️
+                    <div class="absolute w-full h-1.5 bg-rose-300 bottom-0 left-0 transform scale-x-50 rounded-full"></div>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <!-- Poem 1 -->
+                <div data-aos="fade-up-right" class="poem-card p-10 rounded-[2rem] hover:-translate-y-2 transition-transform duration-500">
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="bg-rose-100 text-rose-500 w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-inner">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold font-tiro text-gradient">শুধু তুমি</h3>
+                    </div>
+                    <p class="font-tiro text-gray-700 leading-[2.4] text-[1.15rem] font-medium relative z-10">
+                        হাজার তারার ভিড়ে তুমি আমার চাঁদ,<br>
+                        আমার শূন্য হৃদয়ে তুমি প্রেমের ফাঁদ।<br>
+                        যতবার দেখি তোমায় নতুন লাগে বেশ,<br>
+                        আমার এই ভালোবাসার হবে না তো শেষ।
+                    </p>
+                </div>
+
+                <!-- Poem 2 -->
+                <div data-aos="fade-up-left" data-aos-delay="200" class="poem-card p-10 rounded-[2rem] hover:-translate-y-2 transition-transform duration-500">
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="bg-rose-100 text-rose-500 w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-inner">
+                            <i class="fa-solid fa-heart-circle-check"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold font-tiro text-gradient">প্রার্থনা</h3>
+                    </div>
+                    <p class="font-tiro text-gray-700 leading-[2.4] text-[1.15rem] font-medium relative z-10">
+                        তোমার হাসিতে ফোটে আমার সকাল,<br>
+                        তোমার ছোঁয়ায় কাটে আমার আকাল।<br>
+                        আজকের এই দিনে করি এই কামনা,<br>
+                        সুখে থেকো তুমি, আমার প্রিয়তমা।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Random Message Button Section ================= -->
+    <section id="random" class="py-24 px-4 bg-gradient-to-tr from-rose-50 to-pink-100 rounded-[3rem] mx-4 md:mx-10 my-12 shadow-[inset_0_2px_20px_rgba(0,0,0,0.03)] section-spy">
+        <div class="max-w-3xl mx-auto text-center" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-rose-600 mb-10">তোমার সম্পর্কে কিছু কথা 💭</h2>
+            
+            <div class="bg-white/80 backdrop-blur-md p-8 md:p-14 rounded-[2.5rem] shadow-xl min-h-[220px] flex flex-col justify-center items-center relative border border-white">
+                <i class="fa-solid fa-quote-left absolute top-8 left-8 text-6xl text-rose-200 opacity-50"></i>
+                
+                <p id="dynamic-text" class="text-xl md:text-2xl font-tiro text-gray-800 font-semibold mb-10 z-10 transition-all duration-500 leading-relaxed px-4">
+                    তুমি আমার জীবনের সবচেয়ে সুন্দর উপহার।
+                </p>
+                
+                <button onclick="showRandomMessage()" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white transition-all px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-[0_10px_25px_rgba(225,29,72,0.4)] transform hover:-translate-y-1 flex items-center gap-3 text-lg">
+                    <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i> আরও কথা দেখো
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Photo Gallery Section ================= -->
+    <section id="gallery" class="py-24 px-4 section-spy">
+        <div class="max-w-6xl mx-auto">
+            <h2 data-aos="fade-down" class="text-4xl font-bold text-center text-rose-600 mb-4">মিষ্টি স্মৃতি 📸</h2>
+            <p data-aos="fade-up" class="text-center text-gray-500 mb-16 text-lg">আমাদের কাটানো কিছু সুন্দর মুহূর্ত</p>
+            
+            <div class="flex flex-wrap justify-center gap-10 px-4">
+                
+                <!-- Photo 1 -->
+                <div data-aos="flip-left" class="polaroid w-full max-w-[280px] rotate-[-4deg] group bg-white rounded-lg">
+                    <div class="bg-gray-100 w-full aspect-[4/5] flex items-center justify-center rounded-md overflow-hidden shadow-inner relative">
+                        <!-- Offline image 1 -->
+                        <img src="assets/1.jpg" alt="স্মৃতি ১" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <p class="text-center mt-5 text-gray-700 font-cursive text-2xl">Our Hands 🤝</p>
+                </div>
+
+                <!-- Photo 2 -->
+                <div data-aos="flip-right" data-aos-delay="200" class="polaroid w-full max-w-[280px] rotate-[3deg] mt-8 md:mt-0 group bg-white rounded-lg">
+                    <div class="bg-gray-100 w-full aspect-[4/5] flex items-center justify-center rounded-md overflow-hidden shadow-inner relative">
+                        <!-- Offline image 2 -->
+                        <img src="assets/2.jpg" alt="স্মৃতি ২" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <p class="text-center mt-5 text-gray-700 font-cursive text-2xl">Sunset Vibes 🌅</p>
+                </div>
+                
+                <!-- Photo 3 -->
+                <div data-aos="flip-left" data-aos-delay="400" class="polaroid w-full max-w-[280px] rotate-[-2deg] mt-8 md:mt-0 group bg-white rounded-lg">
+                    <div class="bg-gray-100 w-full aspect-[4/5] flex items-center justify-center rounded-md overflow-hidden shadow-inner relative">
+                        <!-- Offline image 3 -->
+                        <img src="assets/3.jpg" alt="স্মৃতি ৩" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <p class="text-center mt-5 text-gray-700 font-cursive text-2xl">Just You & Me ❤️</p>
+                </div>
+
+            </div>
+            
+            <p data-aos="fade-up" class="text-center text-sm text-gray-400 mt-16 font-tiro">কোনো কিছু খাওয়াবু নো ফ্রি করে দিলাম😴</p>
+        </div>
+    </section>
+
+    <!-- ================= Love Journey Countdown Section ================= -->
+    <section id="love-journey" class="py-20 px-4 bg-gradient-to-b from-white to-pink-50">
+        <div class="max-w-4xl mx-auto text-center glass p-8 md:p-14 rounded-[3rem] shadow-xl border-2 border-rose-200">
+            <h2 data-aos="fade-down" class="text-3xl md:text-4xl font-bold text-rose-600 mb-6">আমাদের ভালোবাসার বয়স 💑</h2>
+            <p class="text-gray-500 font-tiro mb-8 text-lg">যেদিন থেকে আমাদের পথচলা শুরু...</p>
+            
+            <div class="flex flex-wrap justify-center gap-3 md:gap-5 mt-4 mb-10" id="love-timer" data-aos="zoom-in">
+                <div class="bg-white border-2 border-rose-100 text-rose-600 flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-[0_4px_15px_rgba(251,113,133,0.15)]">
+                    <span id="love-years" class="text-2xl md:text-3xl font-bold">00</span>
+                    <span class="text-[11px] md:text-sm font-semibold">বছর</span>
+                </div>
+                <div class="bg-white border-2 border-rose-100 text-rose-600 flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-[0_4px_15px_rgba(251,113,133,0.15)]">
+                    <span id="love-days" class="text-2xl md:text-3xl font-bold">00</span>
+                    <span class="text-[11px] md:text-sm font-semibold">দিন</span>
+                </div>
+                <div class="bg-white border-2 border-rose-100 text-rose-600 flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-[0_4px_15px_rgba(251,113,133,0.15)]">
+                    <span id="love-hours" class="text-2xl md:text-3xl font-bold">00</span>
+                    <span class="text-[11px] md:text-sm font-semibold">ঘণ্টা</span>
+                </div>
+                <div class="bg-white border-2 border-rose-100 text-rose-600 flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-[0_4px_15px_rgba(251,113,133,0.15)]">
+                    <span id="love-minutes" class="text-2xl md:text-3xl font-bold">00</span>
+                    <span class="text-[11px] md:text-sm font-semibold">মিনিট</span>
+                </div>
+                <div class="bg-white border-2 border-rose-100 text-rose-600 flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-[0_4px_15px_rgba(251,113,133,0.15)]">
+                    <span id="love-seconds" class="text-2xl md:text-3xl font-bold">00</span>
+                    <span class="text-[11px] md:text-sm font-semibold">সেকেন্ড</span>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" class="mt-8 px-2">
+                <h3 class="text-xl md:text-3xl font-extrabold stylish-text">তুমি শুধু রাতুল লুচ্চার</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Footer ================= -->
+    <footer class="bg-white py-12 text-center border-t border-pink-100 mb-6 md:mb-0">
+        <p class="text-gray-500 font-semibold text-lg">
+            Made with <i class="fa-solid fa-heart text-rose-500 animate-bounce inline-block mx-1 text-xl"></i> for <span class="text-rose-600 font-bold font-cursive text-2xl ml-1" id="footer-gf-name">Tw</span>
+        </p>
+    </footer>
+
+
+    <!-- ================= Javascript ================= -->
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+        // Disable Right Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        document.onkeydown = function (e) {
+            // F12 key
+            if (e.keyCode == 123) {
+                return false;
+            }
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            // Ctrl+Shift+J
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            // Ctrl+U
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        };
+
+
+        
+        const birthdayDate = "2026-10-15T00:00:00"; 
+        
+        // Relationship start date (Change this date)
+        const relationshipStartDate = "2023-01-01T00:00:00";
+
+        const lovelyMessages = [
+            "তোমার হাসিটা পৃথিবীর সবচেয়ে সুন্দর জিনিস।",
+            "তুমি রেগে গেলে তোমাকে আরও বেশি কিউট লাগে!",
+            "তোমার চোখের দিকে তাকালে আমি দুনিয়ার সব কষ্ট ভুলে যাই।",
+            "তুমি আমার জীবনের সবচেয়ে বড় আশীর্বাদ।",
+            "তোমার গলার স্বর আমার সবচেয়ে প্রিয় গান।",
+            "সারাদিনের ক্লান্তি শেষে তোমার একটা মেসেজই আমার মুখে হাসি ফোটাতে যথেষ্ট।",
+            "আমি হয়তো গুছিয়ে বলতে পারিবিধা না, কিন্তু তোমাকে আমি আমার প্রাণের চেয়েও বেশি ভালোবাসি।",
+            "তোমার পাগলামিগুলো আমার খুব ভালো লাগে!",
+            "তুমি আছো বলেই আমার পৃথিবীটা এতো সুন্দর।"
+        ];
+
+        /* ==================================================================== */
+
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 1000,
+            once: true, 
+            offset: 50
+        });
+        
+        // Background Music Logic
+        const bgMusic = document.getElementById('bg-music');
+        bgMusic.volume = 0.35; 
+
+        const playMusicOnce = () => {
+            bgMusic.play().catch(err => console.log("Autoplay blocked by browser. Interaction required."));
+            ['click', 'touchstart', 'scroll'].forEach(evt => 
+                document.body.removeEventListener(evt, playMusicOnce)
+            );
+        };
+
+        ['click', 'touchstart', 'scroll'].forEach(evt => 
+            document.body.addEventListener(evt, playMusicOnce, {once: true})
+        );
+
+        // Mobile Menu Toggle (Hamburger Menu)
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Background on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md');
+                nav.classList.remove('glass', 'shadow-sm');
+            } else {
+                nav.classList.add('glass', 'shadow-sm');
+                nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md');
+            }
+        });
+
+        // Active Menu Switching (Scroll Spy)
+        const sections = document.querySelectorAll('.section-spy');
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px', 
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.getAttribute('id');
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${currentId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Dynamic Birthday Countdown Logic
+        const targetDate = new Date(birthdayDate).getTime(); 
+
+        const countdownInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                
+                document.getElementById("countdown-container").classList.add("hidden");
+                const specialMsg = document.getElementById("special-message-container");
+                specialMsg.classList.remove("hidden");
+                
+                setTimeout(() => {
+                    specialMsg.classList.remove("scale-95");
+                    specialMsg.classList.add("scale-100");
+                    for(let i=0; i<50; i++) setTimeout(createHeart, i*50);
+                }, 100);
+                
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }, 1000);
+
+        // Love Journey Counter Logic
+        const loveStartDate = new Date(relationshipStartDate).getTime();
+        
+        setInterval(() => {
+            const now = new Date().getTime();
+            const elapsed = now - loveStartDate;
+            
+            if (elapsed > 0) {
+                // Calculate time passed
+                const years = Math.floor(elapsed / (1000 * 60 * 60 * 24 * 365));
+                const days = Math.floor((elapsed % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+                document.getElementById("love-years").innerText = years.toString().padStart(2, '0');
+                document.getElementById("love-days").innerText = days.toString().padStart(2, '0');
+                document.getElementById("love-hours").innerText = hours.toString().padStart(2, '0');
+                document.getElementById("love-minutes").innerText = minutes.toString().padStart(2, '0');
+                document.getElementById("love-seconds").innerText = seconds.toString().padStart(2, '0');
+            }
+        }, 1000);
+
+        // Random Message Function
+        function showRandomMessage() {
+            const textElement = document.getElementById('dynamic-text');
+            
+            textElement.style.opacity = 0;
+            textElement.style.transform = 'translateY(10px)';
+            
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * lovelyMessages.length);
+                let newText = lovelyMessages[randomIndex];
+                
+                if(newText === textElement.innerText) {
+                    newText = lovelyMessages[(randomIndex + 1) % lovelyMessages.length];
+                }
+                
+                textElement.innerText = newText;
+                textElement.style.opacity = 1; 
+                textElement.style.transform = 'translateY(0)';
+            }, 300); 
+        }
+
+        // Floating Hearts Background Generator
+        function createHeart() {
+            const container = document.getElementById('hearts-container');
+            const heart = document.createElement('i');
+            heart.classList.add('fa-solid', 'fa-heart', 'heart-bg');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 1.5 + 0.5) + 'rem';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            container.appendChild(heart);
+            setTimeout(() => heart.remove(), 7000);
+        }
+        setInterval(createHeart, 800);
+
+    </script>
+</body>
+</html>
